@@ -1,0 +1,2464 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --za-olive-950: #14210d;
+    --za-olive-900: #22350d;
+    --za-olive-800: #334b08;
+    --za-olive-700: #49680f;
+    --za-gold: #c99416;
+    --za-paper: #fffdf7;
+    --za-cream: #f8f3e6;
+    --za-line: #e6d8b7;
+    --za-text: #1a2814;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--za-text);
+    font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow-x: hidden;
+}
+
+.za-page {
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 78% 27%, rgba(223, 207, 171, .32), transparent 26rem),
+        linear-gradient(90deg, #fff 0%, #fffdf8 48%, #f8f1e4 100%);
+}
+
+.za-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    min-height: 5.2rem;
+    padding: .55rem clamp(1.25rem, 4.8vw, 4.2rem);
+    border-bottom: 1px solid rgba(74, 66, 41, .16);
+    background: rgba(255, 255, 255, .94);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 2px 20px rgba(35, 42, 20, .05);
+}
+
+.za-logo {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.za-logo img {
+    width: clamp(11rem, 12vw, 13.6rem);
+    height: auto;
+}
+
+.za-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.3rem, 3.1vw, 3.4rem);
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: clamp(.94rem, .9vw, 1.05rem);
+    font-weight: 800;
+    color: #10270f;
+    white-space: nowrap;
+}
+
+.za-nav a,
+.za-header-cta,
+.za-primary-btn,
+.za-secondary-btn {
+    text-decoration: none;
+}
+
+.za-nav a {
+    position: relative;
+    padding: .62rem .82rem;
+    border-radius: 999px;
+    transition: color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.za-nav a:hover {
+    color: #35580b;
+    background: #eef3de;
+    box-shadow: inset 0 0 0 1px rgba(82, 116, 30, .18);
+}
+
+.za-nav a::after {
+    content: "";
+    position: absolute;
+    left: .9rem;
+    right: .9rem;
+    bottom: .25rem;
+    height: 2px;
+    border-radius: 999px;
+    background: #c29a31;
+    opacity: 0;
+    transform: scaleX(.65);
+    transition: opacity .18s ease, transform .18s ease;
+}
+
+.za-nav a:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.za-header-cta,
+.za-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    border-radius: .6rem;
+    background: linear-gradient(180deg, #4f690d 0%, #263a05 100%);
+    color: #fff;
+    font-weight: 800;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 14px 24px rgba(46, 64, 10, .2);
+}
+
+.za-header-cta {
+    min-width: 12.4rem;
+    min-height: 3.45rem;
+    padding: .62rem 1.08rem;
+    font-size: .94rem;
+}
+
+.za-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.55rem;
+    height: 1.55rem;
+    flex: 0 0 1.55rem;
+    color: currentColor;
+}
+
+.za-icon-badge svg,
+.za-secondary-btn svg,
+.za-chip svg {
+    width: 100%;
+    height: 100%;
+}
+
+.za-hero {
+    position: relative;
+    min-height: 36rem;
+    border-bottom: 1px solid rgba(116, 96, 43, .16);
+}
+
+.za-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, .92) 0%, rgba(255, 255, 255, .74) 48%, rgba(249, 241, 226, .48) 100%),
+        radial-gradient(circle at 95% 20%, rgba(103, 125, 35, .12), transparent 17rem);
+}
+
+.za-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(39rem, .9fr) minmax(42rem, 1.1fr);
+    gap: clamp(.25rem, .8vw, 1rem);
+    align-items: center;
+    width: min(100%, 1500px);
+    margin: 0 auto;
+    padding: clamp(1.8rem, 3.4vw, 3rem) clamp(1.25rem, 4.8vw, 4.2rem) clamp(1rem, 1.8vw, 1.35rem);
+    min-width: 0;
+}
+
+.za-hero-copy {
+    max-width: 43.8rem;
+    padding-top: .8rem;
+    min-width: 0;
+}
+
+.za-hero-copy h1 {
+    margin: 0;
+    color: var(--za-olive-950);
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 3.72vw, 4.15rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0;
+}
+
+.za-hero-copy h1 span {
+    color: #3a510d;
+}
+
+.za-title-rule {
+    width: min(17.8rem, 56vw);
+    height: .26rem;
+    margin: .72rem 0 1.05rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--za-gold), rgba(201, 148, 22, 0));
+    transform: rotate(-2deg);
+    transform-origin: left center;
+}
+
+.za-mobile-break {
+    display: none;
+}
+
+.za-hero-copy p {
+    max-width: 38rem;
+    margin: 0;
+    color: #3f4739;
+    font-size: clamp(1rem, 1.17vw, 1.25rem);
+    font-weight: 500;
+    line-height: 1.72;
+}
+
+.za-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    margin-top: 1.65rem;
+}
+
+.za-primary-btn,
+.za-secondary-btn {
+    min-height: 4.3rem;
+    padding: .85rem 1.65rem;
+    font-size: clamp(.98rem, 1vw, 1.08rem);
+}
+
+.za-primary-btn {
+    min-width: min(19.2rem, 100%);
+}
+
+.za-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    min-width: 13.8rem;
+    border: 1px solid #a99665;
+    border-radius: .6rem;
+    background: rgba(255, 255, 255, .8);
+    color: #27340d;
+    font-weight: 800;
+    box-shadow: 0 10px 22px rgba(44, 51, 26, .06);
+}
+
+.za-secondary-btn span {
+    display: inline-flex;
+    width: 1.8rem;
+    height: 1.8rem;
+    color: #4c620f;
+}
+
+.za-feature-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(.75rem, 1.4vw, 1.35rem);
+    margin-top: 1.1rem;
+}
+
+.za-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .72rem;
+    min-height: 3.35rem;
+    color: #2d3519;
+    font-size: clamp(.82rem, .82vw, .92rem);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.za-chip span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    flex: 0 0 2.8rem;
+    border: 1px solid #d2c496;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .76);
+    color: var(--za-olive-700);
+    box-shadow: 0 7px 16px rgba(50, 58, 30, .06);
+}
+
+.za-hero-art {
+    position: relative;
+    min-height: clamp(30.5rem, 36vw, 36.5rem);
+    isolation: isolate;
+}
+
+.za-decor {
+    position: absolute;
+    z-index: -1;
+    width: clamp(15rem, 22vw, 25rem);
+    opacity: .42;
+    filter: drop-shadow(0 10px 20px rgba(73, 89, 35, .12));
+    pointer-events: none;
+}
+
+.za-decor-top {
+    top: -5rem;
+    right: -7.1rem;
+    transform: rotate(12deg);
+}
+
+.za-decor-bottom {
+    bottom: -.6rem;
+    left: 12rem;
+    width: clamp(11rem, 16vw, 18rem);
+    opacity: .58;
+    transform: rotate(-28deg);
+}
+
+.za-art-card {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.za-art-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 22px 30px rgba(48, 46, 25, .13));
+}
+
+.za-art-card strong {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.9rem;
+    margin-top: -.15rem;
+    padding: .28rem .95rem .22rem;
+    border-radius: .45rem;
+    background: linear-gradient(180deg, #5c7415 0%, #374f0d 100%);
+    color: #fff;
+    font-size: clamp(.82rem, .8vw, .98rem);
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: 0 8px 16px rgba(42, 59, 12, .18);
+}
+
+.za-art-card span {
+    display: block;
+    margin-top: .45rem;
+    color: #11170f;
+    font-size: clamp(.78rem, .82vw, .95rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.za-producer {
+    top: -1.05rem;
+    left: 7.4rem;
+    width: clamp(13.2rem, 16.1vw, 17.1rem);
+}
+
+.za-dealer {
+    top: 7.95rem;
+    bottom: auto;
+    left: 8.2rem;
+    width: clamp(22.5rem, 28.4vw, 30.5rem);
+    z-index: 5;
+}
+
+.za-cargo {
+    top: 4.7rem;
+    right: 3.2rem;
+    width: clamp(5.5rem, 6.9vw, 7.35rem);
+    z-index: 6;
+}
+
+.za-cargo span {
+    width: 13rem;
+    margin-top: .35rem;
+    transform: translateX(-.9rem);
+    font-size: clamp(.76rem, .78vw, .9rem);
+    line-height: 1.16;
+}
+
+.za-customer {
+    top: 12.35rem;
+    right: .75rem;
+    bottom: auto;
+    width: clamp(12.8rem, 15.5vw, 16.6rem);
+    z-index: 4;
+}
+
+.za-bottles {
+    position: absolute;
+    z-index: 7;
+    left: .35rem;
+    bottom: 4.9rem;
+    width: clamp(10.6rem, 13.9vw, 14.9rem);
+    filter: drop-shadow(0 22px 22px rgba(55, 49, 25, .2));
+}
+
+.za-flow {
+    position: absolute;
+    z-index: 1;
+    overflow: visible;
+    fill: none;
+    stroke: #5c4416;
+    stroke-width: 3.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.za-flow path:first-child {
+    stroke-dasharray: 10 11;
+}
+
+.za-flow-producer-dealer {
+    top: 8.05rem;
+    left: 10.25rem;
+    width: 9.8rem;
+    height: 12.8rem;
+}
+
+.za-flow-producer-cargo {
+    top: 2.3rem;
+    right: 4.4rem;
+    width: 18.2rem;
+    height: 7.55rem;
+}
+
+.za-flow-cargo-customer {
+    top: 11.25rem;
+    right: 4rem;
+    width: 8rem;
+    height: 8.8rem;
+}
+
+.za-how {
+    border-top: 1px solid rgba(116, 96, 43, .18);
+    border-bottom: 1px solid rgba(116, 96, 43, .14);
+    background:
+        linear-gradient(180deg, rgba(255, 252, 244, .97), rgba(255, 250, 239, .98)),
+        radial-gradient(circle at 50% 0%, rgba(206, 174, 104, .12), transparent 24rem);
+}
+
+.za-how-inner {
+    width: min(100%, 89rem);
+    margin: 0 auto;
+    padding: 1.05rem clamp(1.25rem, 4.8vw, 4.2rem) 1.35rem;
+}
+
+.za-how h2 {
+    margin: 0 0 1.2rem;
+    color: var(--za-olive-950);
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.85rem, 2.05vw, 2.18rem);
+    font-weight: 700;
+    line-height: 1.12;
+    text-align: center;
+}
+
+.za-steps {
+    display: grid;
+    grid-template-columns: minmax(8rem, 9.4rem) 2.7rem minmax(8rem, 9.4rem) 2.7rem minmax(8rem, 9.4rem) 2.7rem minmax(8rem, 9.4rem);
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(.65rem, 1.35vw, 1.1rem);
+    width: min(100%, 70.5rem);
+    margin: 0 auto;
+}
+
+.za-step-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 9.85rem;
+    padding: 1.08rem .74rem .8rem;
+    border: 1px solid #d7bd83;
+    border-radius: .86rem;
+    background: rgba(255, 253, 247, .96);
+    box-shadow: 0 10px 26px rgba(70, 57, 23, .045);
+    text-align: center;
+}
+
+.za-step-no {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #617817 0%, #3f5609 100%);
+    color: #fffbea;
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.13rem;
+    font-weight: 700;
+    box-shadow: 0 5px 10px rgba(45, 58, 12, .18);
+}
+
+.za-step-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 4.1rem;
+    height: 4.1rem;
+    margin-bottom: .42rem;
+    color: #4b6511;
+}
+
+.za-step-visual svg {
+    width: 100%;
+    height: 100%;
+}
+
+.za-step-phone svg {
+    width: 3.35rem;
+    height: 3.85rem;
+}
+
+.za-social {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 1.12rem;
+    height: 1.12rem;
+    border-radius: 50%;
+    color: #fff;
+    font-size: .7rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.za-instagram {
+    top: 1.25rem;
+    left: .2rem;
+    background: #e24578;
+}
+
+.za-facebook {
+    top: 1.05rem;
+    right: .15rem;
+    background: #2374d7;
+    font-family: Arial, sans-serif;
+}
+
+.za-whatsapp {
+    right: .35rem;
+    bottom: .7rem;
+    background: #22b456;
+}
+
+.za-step-coins img {
+    width: 4.65rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.za-step-card h3 {
+    margin: 0 0 .28rem;
+    color: #11170f;
+    font-size: .98rem;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.za-step-card p {
+    margin: 0;
+    color: #303327;
+    font-size: .76rem;
+    font-weight: 500;
+    line-height: 1.28;
+}
+
+.za-step-arrow {
+    color: #59680f;
+    font-size: 2.35rem;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+}
+
+.za-profit-example {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(10.5rem, 13rem) 1fr minmax(5.7rem, 7.6rem);
+    align-items: center;
+    gap: clamp(.8rem, 1.5vw, 1.35rem);
+    width: min(100%, 78.5rem);
+    min-height: 8rem;
+    margin: 1rem auto 0;
+    padding: .78rem 1.25rem 1.18rem;
+    border: 1px solid #cda85d;
+    border-radius: .95rem;
+    background: rgba(255, 250, 239, .98);
+    box-shadow: 0 10px 24px rgba(84, 65, 24, .045);
+}
+
+.za-profit-title {
+    position: relative;
+    min-height: 6.1rem;
+}
+
+.za-profit-title h3 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: var(--za-olive-950);
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(2.05rem, 2.55vw, 2.55rem);
+    font-weight: 700;
+    line-height: .98;
+}
+
+.za-profit-title span {
+    display: block;
+    width: 6.25rem;
+    height: .22rem;
+    margin-top: .45rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--za-gold), rgba(201, 148, 22, 0));
+    transform: rotate(-2deg);
+}
+
+.za-profit-title img {
+    display: none;
+}
+
+.za-profit-calc {
+    display: grid;
+    grid-template-columns: minmax(8.8rem, 10.2rem) 2rem minmax(8.8rem, 10.2rem) 2rem minmax(8.8rem, 10.2rem);
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.5rem, 1vw, .82rem);
+}
+
+.za-price-box {
+    display: grid;
+    align-content: center;
+    min-height: 4.85rem;
+    padding: .55rem .75rem .62rem;
+    border: 1px solid #e3d2ab;
+    border-radius: .72rem;
+    background: rgba(255, 253, 248, .98);
+    text-align: center;
+}
+
+.za-price-box strong {
+    display: block;
+    margin-bottom: .18rem;
+    color: #161711;
+    font-size: .84rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.za-price-box b {
+    color: #2e3b14;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.95rem, 2.7vw, 2.55rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.za-price-box-profit b {
+    color: #b87900;
+}
+
+.za-operator {
+    color: #171712;
+    font-size: 2.05rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.za-profit-coins {
+    width: min(100%, 7.1rem);
+    height: auto;
+    justify-self: center;
+}
+
+.za-profit-example > p {
+    position: absolute;
+    left: 50%;
+    bottom: .18rem;
+    margin: 0;
+    transform: translateX(-50%);
+    color: #4a4334;
+    font-size: .75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.za-advantages {
+    border-bottom: 1px solid rgba(116, 96, 43, .14);
+    background:
+        linear-gradient(180deg, rgba(255, 253, 247, .98), rgba(255, 250, 240, .98)),
+        radial-gradient(circle at 50% 0%, rgba(195, 165, 91, .1), transparent 22rem);
+}
+
+.za-advantages-inner {
+    width: min(100%, 89rem);
+    margin: 0 auto;
+    padding: .78rem clamp(1.25rem, 4.8vw, 4.2rem) 1.2rem;
+}
+
+.za-advantages h2 {
+    margin: 0 0 .82rem;
+    color: var(--za-olive-950);
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.82rem, 2.05vw, 2.12rem);
+    font-weight: 700;
+    line-height: 1.12;
+    text-align: center;
+}
+
+.za-advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(7.7rem, 1fr));
+    gap: clamp(.72rem, 1.16vw, 1.08rem);
+}
+
+.za-advantage-card {
+    display: flex;
+    min-height: 10.25rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: .98rem .72rem .72rem;
+    border: 1px solid #e0c99a;
+    border-radius: .82rem;
+    background: rgba(255, 253, 248, .97);
+    box-shadow: 0 10px 24px rgba(84, 65, 24, .04);
+    text-align: center;
+}
+
+.za-advantage-icon {
+    display: grid;
+    place-items: center;
+    width: 4.2rem;
+    height: 4.2rem;
+    margin-bottom: .5rem;
+    color: #4a6510;
+}
+
+.za-advantage-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.za-advantage-card h3 {
+    display: grid;
+    align-items: end;
+    min-height: 2.42rem;
+    margin: 0 0 .34rem;
+    color: #11170f;
+    font-size: .92rem;
+    font-weight: 800;
+    line-height: 1.14;
+}
+
+.za-advantage-card p {
+    margin: 0;
+    color: #333629;
+    font-size: .73rem;
+    font-weight: 500;
+    line-height: 1.32;
+}
+
+.za-audience {
+    border-bottom: 1px solid rgba(116, 96, 43, .14);
+    background:
+        linear-gradient(180deg, rgba(255, 253, 247, .98), rgba(255, 250, 240, .98)),
+        radial-gradient(circle at 50% 8%, rgba(193, 161, 86, .11), transparent 22rem);
+}
+
+.za-audience-inner {
+    width: min(100%, 89rem);
+    margin: 0 auto;
+    padding: .8rem clamp(1.25rem, 4.8vw, 4.2rem) 1.28rem;
+}
+
+.za-audience h2 {
+    margin: 0 0 .85rem;
+    color: var(--za-olive-950);
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.82rem, 2.05vw, 2.12rem);
+    font-weight: 700;
+    line-height: 1.12;
+    text-align: center;
+}
+
+.za-audience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(11.5rem, 1fr));
+    gap: clamp(1rem, 1.8vw, 1.45rem);
+}
+
+.za-audience-card {
+    position: relative;
+    display: block;
+    min-height: 0;
+    overflow: hidden;
+    border: 1px solid #dfc99b;
+    border-radius: .86rem;
+    background: rgba(255, 253, 248, .97);
+    box-shadow: 0 10px 24px rgba(84, 65, 24, .04);
+    text-align: center;
+}
+
+.za-audience-card img {
+    display: block;
+    width: calc(100% + 2px);
+    height: auto;
+    max-width: none;
+    margin: -1.45rem -1px 0;
+}
+
+.za-audience-card h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.za-winners,
+.za-faq {
+    border-bottom: 1px solid rgba(116, 96, 43, .14);
+    background: rgba(255, 252, 246, .98);
+}
+
+.za-winners-inner,
+.za-faq-inner {
+    width: min(100%, 89rem);
+    margin: 0 auto;
+    padding: .9rem clamp(1.25rem, 4.8vw, 4.2rem) 1.05rem;
+}
+
+.za-winners h2,
+.za-faq h2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    margin: 0 0 .9rem;
+    color: var(--za-olive-950);
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.78rem, 2vw, 2.08rem);
+    font-weight: 700;
+    line-height: 1.12;
+    text-align: center;
+}
+
+.za-winners h2::before,
+.za-winners h2::after {
+    content: "";
+    display: block;
+    width: min(12vw, 7.6rem);
+    height: 1px;
+    background: #c6a756;
+}
+
+.za-winner-grid,
+.za-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2.1vw, 1.7rem);
+}
+
+.za-winner-card {
+    display: grid;
+    grid-template-columns: 4.25rem 1fr;
+    align-items: center;
+    gap: 1rem;
+    min-height: 5.65rem;
+    padding: .58rem 1rem;
+    border: 1px solid #d7bd83;
+    border-radius: .78rem;
+    background: rgba(255, 253, 248, .96);
+    box-shadow: 0 10px 24px rgba(84, 65, 24, .04);
+}
+
+.za-winner-icon {
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #648016 0%, #405d08 100%);
+    color: #fff;
+}
+
+.za-winner-icon svg {
+    width: 2.55rem;
+    height: 2.55rem;
+}
+
+.za-winner-card h3 {
+    margin: 0 0 .16rem;
+    color: #182010;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    line-height: 1.12;
+}
+
+.za-winner-card p {
+    margin: 0;
+    color: #303327;
+    font-size: .82rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.za-faq-inner {
+    padding-top: .8rem;
+    padding-bottom: .9rem;
+}
+
+.za-faq h2 {
+    margin-bottom: .75rem;
+}
+
+.za-faq-card {
+    display: grid;
+    grid-template-columns: 1fr 1.4rem;
+    align-items: start;
+    gap: .9rem;
+    min-height: 4.5rem;
+    padding: .78rem 1rem .75rem;
+    border: 1px solid #d7bd83;
+    border-radius: .72rem;
+    background: rgba(255, 253, 248, .97);
+    box-shadow: 0 8px 20px rgba(84, 65, 24, .035);
+}
+
+.za-faq-card h3,
+.za-faq-card p {
+    margin: 0;
+}
+
+.za-faq-card h3 {
+    color: #161711;
+    font-size: .9rem;
+    font-weight: 800;
+    line-height: 1.18;
+}
+
+.za-faq-card p {
+    margin-top: .22rem;
+    color: #3a3b31;
+    font-size: .78rem;
+    font-weight: 500;
+    line-height: 1.28;
+}
+
+.za-faq-card > span {
+    color: #23340e;
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1;
+    text-align: right;
+}
+
+.za-quality-profit {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(116, 96, 43, .14);
+    background:
+        radial-gradient(circle at 6% 55%, rgba(109, 129, 45, .12), transparent 16rem),
+        radial-gradient(circle at 86% 13%, rgba(201, 148, 22, .16), transparent 18rem),
+        linear-gradient(100deg, #fffdf8 0%, #fff8ed 46%, #fffaf2 100%);
+}
+
+.za-quality-profit::before,
+.za-quality-profit::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    background: url("/assets/zeytinci-abi/07_zeytin_dali_kose_dekor.png") center / contain no-repeat;
+    opacity: .28;
+    filter: saturate(.9);
+}
+
+.za-quality-profit::before {
+    left: -4.2rem;
+    bottom: 7.4rem;
+    width: 16rem;
+    height: 16rem;
+    transform: rotate(22deg);
+}
+
+.za-quality-profit::after {
+    right: -2.5rem;
+    top: -3.2rem;
+    width: 15.5rem;
+    height: 15.5rem;
+    transform: rotate(-18deg);
+}
+
+.za-quality-profit-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+    grid-template-areas:
+        "left right"
+        "strip strip";
+    gap: clamp(1.4rem, 3vw, 2.7rem);
+    width: min(100%, 89rem);
+    min-height: 39.6rem;
+    margin: 0 auto;
+    padding: clamp(1.65rem, 3.8vw, 3.65rem) clamp(1.25rem, 4.8vw, 4.2rem) 1.45rem;
+}
+
+.za-quality-left {
+    position: relative;
+    grid-area: left;
+    min-height: 34rem;
+    padding-left: clamp(.2rem, 1.2vw, 1rem);
+}
+
+.za-quality-brand {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1.05rem;
+    width: fit-content;
+    margin-bottom: 1.05rem;
+}
+
+.za-quality-brand img {
+    width: clamp(14rem, 22vw, 24rem);
+    height: auto;
+}
+
+.za-quality-brand span {
+    display: none;
+}
+
+.za-quality-left h2 {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    margin: 0 0 1.05rem;
+    color: var(--za-olive-950);
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(2.85rem, 4.25vw, 4.45rem);
+    font-weight: 700;
+    line-height: .99;
+    letter-spacing: 0;
+}
+
+.za-quality-left h2::after {
+    content: "";
+    display: block;
+    width: 88%;
+    height: .22rem;
+    margin-top: .62rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #c89520, rgba(200, 149, 32, .08));
+}
+
+.za-quality-left > p {
+    position: relative;
+    z-index: 2;
+    max-width: 34rem;
+    margin: 0 0 1.5rem;
+    color: #3d4539;
+    font-size: clamp(1rem, 1.15vw, 1.16rem);
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.za-quality-badges {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .8rem;
+    width: min(100%, 30rem);
+}
+
+.za-quality-badge {
+    display: grid;
+    justify-items: center;
+    min-height: 11rem;
+    padding: 1rem .72rem .82rem;
+    border: 1px solid rgba(216, 190, 126, .88);
+    border-radius: .78rem;
+    background: #fffdf8;
+    box-shadow: 0 12px 26px rgba(55, 49, 28, .08);
+    text-align: center;
+}
+
+.za-quality-badge-icon {
+    display: grid;
+    place-items: center;
+    width: 4.65rem;
+    height: 4.65rem;
+    margin-bottom: .64rem;
+    border: 1px solid rgba(211, 174, 80, .42);
+    border-radius: 50%;
+    background: #f6eed9;
+    color: #5b7016;
+}
+
+.za-quality-badge-icon svg {
+    width: 2.62rem;
+    height: 2.62rem;
+}
+
+.za-quality-badge strong {
+    color: #17260d;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.05rem, 1.22vw, 1.25rem);
+    line-height: 1.08;
+}
+
+.za-quality-badge span,
+.za-quality-badge small {
+    display: block;
+    color: #34382f;
+    font-size: .82rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.za-quality-badge small {
+    margin-top: .26rem;
+    color: #62675d;
+    font-weight: 500;
+}
+
+.za-quality-product {
+    position: absolute;
+    z-index: 1;
+    top: clamp(7.9rem, 9vw, 9.4rem);
+    right: clamp(-6.4rem, -4.5vw, -3.7rem);
+    width: clamp(10.8rem, 13.5vw, 14.8rem);
+    max-width: none;
+    filter: drop-shadow(0 18px 22px rgba(36, 42, 19, .14));
+}
+
+.za-quality-right {
+    grid-area: right;
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    grid-template-areas:
+        ". profit"
+        "flow flow";
+    gap: 1.18rem 0;
+    align-content: start;
+}
+
+.za-profit-calculator {
+    grid-area: profit;
+    padding: 1.42rem 1.58rem 1.55rem;
+    border: 1px solid #c89520;
+    border-radius: 1.18rem;
+    background: rgba(255, 253, 248, .96);
+    box-shadow: 0 16px 36px rgba(69, 52, 18, .1);
+}
+
+.za-profit-calculator h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .82rem;
+    margin: 0 0 1.12rem;
+    color: #2a301f;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(1rem, 1.25vw, 1.18rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.za-profit-calculator h3 span {
+    display: block;
+    width: 4.1rem;
+    height: 1px;
+    background: #c89520;
+}
+
+.za-profit-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 1rem;
+}
+
+.za-profit-metrics > div {
+    position: relative;
+    min-height: 5.7rem;
+    text-align: center;
+}
+
+.za-profit-metrics > div + div::before {
+    content: "";
+    position: absolute;
+    left: -.5rem;
+    top: .6rem;
+    bottom: .6rem;
+    width: 1px;
+    background: rgba(201, 148, 22, .68);
+}
+
+.za-profit-metrics span {
+    display: block;
+    min-height: 2rem;
+    margin-bottom: .38rem;
+    color: #20251a;
+    font-size: .92rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.za-profit-metrics strong {
+    display: block;
+    color: var(--za-olive-950);
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 3vw, 3.02rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.za-profit-metrics .za-profit-net strong {
+    color: #c08406;
+}
+
+.za-profit-calculator p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .72rem;
+    min-height: 3.12rem;
+    margin: 1.1rem 0 0;
+    border-radius: .62rem;
+    background: linear-gradient(90deg, rgba(248, 238, 215, .55), rgba(255, 253, 248, .96), rgba(248, 238, 215, .55));
+    color: #303428;
+    font-size: .98rem;
+    font-weight: 600;
+}
+
+.za-profit-calculator p svg {
+    width: 2rem;
+    height: 2rem;
+    color: #4e5f13;
+}
+
+.za-payment-flow {
+    position: relative;
+    grid-area: flow;
+    display: grid;
+    gap: .92rem;
+    padding-left: 5.1rem;
+}
+
+.za-payment-flow::before {
+    content: "";
+    position: absolute;
+    left: 2.22rem;
+    top: 1.1rem;
+    bottom: 1.1rem;
+    border-left: 1px dashed rgba(75, 86, 24, .7);
+}
+
+.za-flow-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4.72rem 1fr;
+    align-items: center;
+    gap: 1.05rem;
+    min-height: 6.6rem;
+    padding: .92rem 1.12rem;
+    border: 1px solid rgba(226, 216, 197, .92);
+    border-radius: .82rem;
+    background: rgba(255, 253, 248, .94);
+    box-shadow: 0 12px 26px rgba(55, 49, 28, .07);
+}
+
+.za-flow-number {
+    position: absolute;
+    left: -4.96rem;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 2.9rem;
+    height: 2.9rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: linear-gradient(180deg, #6b7f1b, #465e0b);
+    color: #fff;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: 1.38rem;
+    font-weight: 700;
+    box-shadow: 0 8px 16px rgba(51, 65, 13, .18);
+}
+
+.za-flow-card-highlight .za-flow-number {
+    background: linear-gradient(180deg, #d5aa26, #bf7f08);
+}
+
+.za-flow-icon {
+    display: grid;
+    place-items: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 1px solid rgba(223, 204, 158, .65);
+    border-radius: 50%;
+    background: #f6eed9;
+    color: #657614;
+}
+
+.za-flow-icon svg {
+    width: 2.62rem;
+    height: 2.62rem;
+}
+
+.za-flow-card h4 {
+    margin: 0 0 .34rem;
+    color: #252818;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.08rem, 1.45vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.18;
+}
+
+.za-flow-card p {
+    margin: 0;
+    color: #464a3f;
+    font-size: .98rem;
+    font-weight: 500;
+    line-height: 1.38;
+}
+
+.za-flow-card-highlight {
+    border-color: #a98c25;
+    background: linear-gradient(90deg, rgba(255, 248, 224, .98), rgba(255, 253, 248, .96));
+}
+
+.za-quality-strip {
+    grid-area: strip;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    width: min(100%, 78rem);
+    min-height: 3.45rem;
+    margin: .2rem auto 0;
+    overflow: hidden;
+    border: 1px solid rgba(221, 203, 162, .78);
+    border-radius: .88rem;
+    background: rgba(255, 253, 248, .86);
+    box-shadow: 0 9px 22px rgba(55, 49, 28, .06);
+}
+
+.za-quality-strip span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .72rem;
+    min-height: 2.8rem;
+    padding: .35rem 1rem;
+    color: #505917;
+    font-size: .88rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.za-quality-strip span + span {
+    border-left: 1px solid rgba(213, 190, 136, .72);
+}
+
+.za-quality-strip svg {
+    flex: 0 0 auto;
+    width: 1.72rem;
+    height: 1.72rem;
+    color: #687818;
+}
+
+@media (max-width: 1180px) {
+    .za-quality-profit-inner {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "left"
+            "right"
+            "strip";
+        min-height: 0;
+    }
+
+    .za-quality-left {
+        min-height: 28.5rem;
+        padding-right: 11.5rem;
+    }
+
+    .za-quality-product {
+        top: 9.8rem;
+        right: -3.1rem;
+        width: 11.5rem;
+    }
+
+    .za-quality-right {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "profit"
+            "flow";
+    }
+
+    .za-payment-flow {
+        padding-left: 4.5rem;
+    }
+}
+
+@media (max-width: 760px) {
+    .za-quality-profit::before {
+        left: -6.2rem;
+        bottom: auto;
+        top: 19rem;
+        width: 13rem;
+        height: 13rem;
+        opacity: .2;
+    }
+
+    .za-quality-profit::after {
+        right: -5rem;
+        width: 12rem;
+        height: 12rem;
+        opacity: .22;
+    }
+
+    .za-quality-profit-inner {
+        width: min(100%, 24rem);
+        padding: 1.35rem 1rem 1rem;
+        gap: 1rem;
+    }
+
+    .za-quality-left {
+        min-height: 0;
+        padding: 0;
+    }
+
+    .za-quality-brand {
+        margin: 0 auto .9rem;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .za-quality-brand img {
+        width: 13.4rem;
+    }
+
+    .za-quality-left h2 {
+        margin-inline: auto;
+        font-size: clamp(2.18rem, 10.6vw, 2.72rem);
+        text-align: center;
+    }
+
+    .za-quality-left h2::after {
+        width: 100%;
+        height: .16rem;
+        margin-top: .42rem;
+    }
+
+    .za-quality-left > p {
+        max-width: 21rem;
+        margin: 0 auto 1rem;
+        font-size: .94rem;
+        line-height: 1.48;
+        text-align: center;
+    }
+
+    .za-quality-badges {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: .45rem;
+        width: 100%;
+    }
+
+    .za-quality-badge {
+        min-height: 8.6rem;
+        padding: .65rem .34rem .55rem;
+        border-radius: .68rem;
+    }
+
+    .za-quality-badge-icon {
+        width: 3.18rem;
+        height: 3.18rem;
+        margin-bottom: .42rem;
+    }
+
+    .za-quality-badge-icon svg {
+        width: 1.9rem;
+        height: 1.9rem;
+    }
+
+    .za-quality-badge strong {
+        font-size: .92rem;
+    }
+
+    .za-quality-badge span,
+    .za-quality-badge small {
+        font-size: .68rem;
+    }
+
+    .za-quality-product {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        width: min(100%, 18rem);
+        margin: .78rem auto -.15rem;
+    }
+
+    .za-profit-calculator {
+        padding: 1rem .82rem 1.05rem;
+        border-radius: .92rem;
+    }
+
+    .za-profit-calculator h3 {
+        gap: .5rem;
+        margin-bottom: .85rem;
+        font-size: .92rem;
+    }
+
+    .za-profit-calculator h3 span {
+        width: 2.35rem;
+    }
+
+    .za-profit-metrics {
+        gap: .42rem;
+    }
+
+    .za-profit-metrics > div {
+        min-height: 4.6rem;
+    }
+
+    .za-profit-metrics > div + div::before {
+        left: -.21rem;
+        top: .7rem;
+        bottom: .7rem;
+    }
+
+    .za-profit-metrics span {
+        min-height: 1.8rem;
+        font-size: .68rem;
+    }
+
+    .za-profit-metrics strong {
+        font-size: clamp(1.42rem, 7vw, 1.92rem);
+    }
+
+    .za-profit-calculator p {
+        min-height: 2.7rem;
+        padding: .35rem .5rem;
+        font-size: .78rem;
+    }
+
+    .za-payment-flow {
+        gap: .62rem;
+        padding-left: 3.25rem;
+    }
+
+    .za-payment-flow::before {
+        left: 1.47rem;
+        top: 1rem;
+        bottom: 1rem;
+    }
+
+    .za-flow-card {
+        grid-template-columns: 3.2rem 1fr;
+        gap: .72rem;
+        min-height: 5.7rem;
+        padding: .72rem .74rem;
+        border-radius: .74rem;
+    }
+
+    .za-flow-number {
+        left: -3.18rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.05rem;
+    }
+
+    .za-flow-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .za-flow-icon svg {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .za-flow-card h4 {
+        margin-bottom: .18rem;
+        font-size: .98rem;
+    }
+
+    .za-flow-card p {
+        font-size: .78rem;
+        line-height: 1.32;
+    }
+
+    .za-quality-strip {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        min-height: 0;
+        margin-top: .05rem;
+        border-radius: .78rem;
+    }
+
+    .za-quality-strip span {
+        justify-content: flex-start;
+        min-height: 2.78rem;
+        padding: .38rem .58rem;
+        font-size: .68rem;
+        text-align: left;
+    }
+
+    .za-quality-strip span + span {
+        border-left: 0;
+    }
+
+    .za-quality-strip span:nth-child(odd) {
+        border-right: 1px solid rgba(213, 190, 136, .72);
+    }
+
+    .za-quality-strip span:nth-child(n + 3) {
+        border-top: 1px solid rgba(213, 190, 136, .72);
+    }
+
+    .za-quality-strip svg {
+        width: 1.35rem;
+        height: 1.35rem;
+    }
+}
+
+.za-final-cta {
+    background: rgba(255, 252, 246, .98);
+    padding: .72rem clamp(1.25rem, 4.8vw, 4.2rem) .52rem;
+}
+
+.za-final-cta-inner {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: min(100%, 78.5rem);
+    min-height: 8.6rem;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: .92rem;
+    background:
+        radial-gradient(circle at 12% 45%, rgba(145, 170, 55, .34), transparent 17rem),
+        linear-gradient(180deg, #4c7210 0%, #1f3909 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 13px 26px rgba(31, 49, 10, .12);
+}
+
+.za-final-copy {
+    position: relative;
+    z-index: 2;
+    max-width: min(100%, 48rem);
+    padding: 1rem 1rem .85rem;
+    color: #fff;
+    text-align: center;
+}
+
+.za-final-copy h2 {
+    margin: 0;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 3.1vw, 3.15rem);
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.za-final-copy p {
+    margin: .28rem 0 .52rem;
+    font-size: clamp(.98rem, 1.25vw, 1.2rem);
+    font-weight: 800;
+    line-height: 1.22;
+}
+
+.za-final-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    min-width: 14rem;
+    min-height: 2.9rem;
+    padding: .62rem 1.35rem;
+    border-radius: .52rem;
+    background: linear-gradient(180deg, #efc84e 0%, #bd8616 100%);
+    color: #fff;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .32), 0 10px 18px rgba(46, 32, 5, .18);
+}
+
+.za-final-copy small {
+    display: block;
+    margin-top: .2rem;
+    color: rgba(255, 255, 255, .9);
+    font-size: .72rem;
+    font-weight: 600;
+}
+
+.za-final-branch,
+.za-final-bottle {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.za-final-branch {
+    display: none;
+}
+
+.za-final-bottle {
+    right: 1.5rem;
+    bottom: -.55rem;
+    width: clamp(5.4rem, 8.2vw, 8.5rem);
+    filter: drop-shadow(0 16px 24px rgba(13, 22, 5, .28));
+}
+
+.za-footer {
+    background: #fffdf7;
+}
+
+.za-footer-inner {
+    display: grid;
+    grid-template-columns: minmax(14rem, 1.7fr) minmax(7rem, .8fr) minmax(7rem, .8fr) minmax(13rem, 1fr);
+    gap: clamp(1rem, 3vw, 3.2rem);
+    width: min(100%, 78.5rem);
+    margin: 0 auto;
+    padding: .75rem clamp(1rem, 2vw, 1.5rem) .95rem;
+    color: #253018;
+}
+
+.za-footer-brand img {
+    width: 12.8rem;
+    height: auto;
+}
+
+.za-footer-brand p {
+    max-width: 17rem;
+    margin: .2rem 0 0;
+    font-size: .72rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.za-footer-links,
+.za-footer-contact {
+    display: grid;
+    align-content: start;
+    gap: .25rem;
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.za-footer-links a {
+    color: #253018;
+    text-decoration: none;
+}
+
+.za-footer-contact p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: .42rem;
+}
+
+.za-social-row {
+    display: flex;
+    gap: .42rem;
+    margin-top: .12rem;
+}
+
+.za-social-row span {
+    display: grid;
+    place-items: center;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    background: #4b6511;
+    color: #fff;
+    font-size: .72rem;
+    font-weight: 900;
+}
+
+@media (max-width: 1180px) {
+    .za-header {
+        min-height: auto;
+        flex-wrap: wrap;
+        row-gap: .8rem;
+    }
+
+    .za-nav {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: .25rem;
+    }
+
+    .za-hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .za-hero-copy {
+        max-width: 47rem;
+    }
+
+    .za-hero-art {
+        width: min(100%, 48rem);
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .za-page {
+        background: linear-gradient(180deg, #fff 0%, #fffaf0 100%);
+    }
+
+    .za-header {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: .85rem;
+    }
+
+    .za-logo {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .za-logo img {
+        width: 11.2rem;
+    }
+
+    .za-header-cta {
+        justify-self: center;
+        width: min(100%, 21.5rem);
+        min-width: auto;
+        min-height: 3.25rem;
+        padding: .65rem .9rem;
+        font-size: .9rem;
+    }
+
+    .za-nav {
+        order: initial;
+        flex-wrap: wrap;
+        gap: .55rem .78rem;
+        overflow: visible;
+        padding-bottom: 0;
+        font-size: .8rem;
+        width: 100%;
+        justify-content: center;
+        line-height: 1.2;
+    }
+
+    .za-hero-inner {
+        padding: 2rem 1rem 2.25rem;
+        overflow: hidden;
+    }
+
+    .za-hero-copy h1 {
+        max-width: 100%;
+        font-size: clamp(2.08rem, 9.2vw, 2.72rem);
+        line-height: 1.12;
+    }
+
+    .za-mobile-break {
+        display: block;
+    }
+
+    .za-hero-copy p {
+        width: min(100%, 21.5rem);
+        max-width: 21.5rem;
+        font-size: .95rem;
+        line-height: 1.62;
+    }
+
+    .za-actions {
+        width: min(100%, 21.5rem);
+        flex-wrap: wrap;
+        gap: .75rem;
+    }
+
+    .za-primary-btn,
+    .za-secondary-btn {
+        width: 100%;
+        min-height: 3.75rem;
+    }
+
+    .za-feature-chips {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .55rem;
+    }
+
+    .za-chip {
+        white-space: normal;
+    }
+
+    .za-hero-art {
+        width: min(100%, 24rem);
+        min-height: 28.5rem;
+        margin: 1rem auto 0;
+        transform: none;
+        overflow: hidden;
+    }
+
+    .za-producer {
+        top: .2rem;
+        left: .65rem;
+        width: 11.8rem;
+    }
+
+    .za-cargo {
+        top: 5.8rem;
+        right: 2.45rem;
+        width: 5.35rem;
+    }
+
+    .za-cargo span {
+        width: 8.4rem;
+        transform: translateX(-1.45rem);
+        font-size: .58rem;
+        line-height: 1.12;
+    }
+
+    .za-dealer {
+        top: 11.5rem;
+        bottom: auto;
+        left: 5.2rem;
+        width: 17.8rem;
+    }
+
+    .za-customer {
+        top: 12.8rem;
+        right: 1rem;
+        bottom: auto;
+        width: 8.45rem;
+    }
+
+    .za-bottles {
+        left: .1rem;
+        bottom: 1.8rem;
+        width: 8.6rem;
+    }
+
+    .za-flow-producer-dealer {
+        top: 5.8rem;
+        left: 2.8rem;
+        width: 6.7rem;
+        height: 9.2rem;
+    }
+
+    .za-flow-producer-cargo {
+        top: 2.35rem;
+        right: 3.2rem;
+        width: 10.5rem;
+        height: 5rem;
+    }
+
+    .za-flow-cargo-customer {
+        top: 9.2rem;
+        right: 3.7rem;
+        width: 4.5rem;
+        height: 6.2rem;
+    }
+
+    .za-decor-top {
+        right: -6.5rem;
+        top: -2rem;
+        width: 14rem;
+    }
+
+    .za-decor-bottom {
+        left: 4rem;
+        bottom: -1.3rem;
+        width: 10rem;
+    }
+
+    .za-how-inner {
+        padding: 1.15rem 1rem 1.45rem;
+    }
+
+    .za-how h2 {
+        margin-bottom: 1.2rem;
+        font-size: clamp(1.42rem, 6.1vw, 1.62rem);
+    }
+
+    .za-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.05rem .9rem;
+        width: min(100%, 22.35rem);
+    }
+
+    .za-step-card {
+        min-height: 9.45rem;
+        padding: 1rem .58rem .75rem;
+    }
+
+    .za-step-no {
+        top: -.82rem;
+        left: -.65rem;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .za-step-visual {
+        width: 3.45rem;
+        height: 3.45rem;
+    }
+
+    .za-step-coins img {
+        width: 4rem;
+    }
+
+    .za-step-card h3 {
+        font-size: .92rem;
+    }
+
+    .za-step-card p {
+        font-size: .7rem;
+    }
+
+    .za-step-arrow {
+        display: none;
+    }
+
+    .za-profit-example {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: .8rem;
+        width: min(100%, 22.35rem);
+        min-height: 0;
+        margin-top: 1.1rem;
+        padding: 1rem .85rem 2.15rem;
+        overflow: hidden;
+    }
+
+    .za-profit-title {
+        min-height: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .za-profit-title h3 {
+        font-size: clamp(1.8rem, 9vw, 2.25rem);
+        line-height: 1.02;
+    }
+
+    .za-profit-title span {
+        margin: .45rem auto 0;
+    }
+
+    .za-profit-title img {
+        right: calc(50% - 6.8rem);
+        bottom: -.65rem;
+        width: 4.8rem;
+        opacity: .92;
+    }
+
+    .za-profit-calc {
+        grid-template-columns: 1fr;
+        width: min(100%, 18.8rem);
+        gap: .48rem;
+    }
+
+    .za-price-box {
+        min-height: 4.55rem;
+    }
+
+    .za-price-box b {
+        font-size: clamp(1.95rem, 9vw, 2.45rem);
+    }
+
+    .za-operator {
+        font-size: 1.6rem;
+        line-height: .9;
+    }
+
+    .za-profit-coins {
+        position: absolute;
+        right: .45rem;
+        bottom: .42rem;
+        width: 4.7rem;
+        opacity: .9;
+    }
+
+    .za-profit-example > p {
+        left: 1rem;
+        right: 5.1rem;
+        bottom: .58rem;
+        transform: none;
+        font-size: .64rem;
+        line-height: 1.25;
+        white-space: normal;
+    }
+
+    .za-advantages-inner {
+        padding: .95rem 1rem 1.25rem;
+    }
+
+    .za-advantages h2 {
+        margin-bottom: .85rem;
+        font-size: clamp(1.42rem, 6.1vw, 1.62rem);
+    }
+
+    .za-advantage-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .82rem .72rem;
+        width: min(100%, 22.35rem);
+        margin: 0 auto;
+    }
+
+    .za-advantage-card {
+        min-height: 9.3rem;
+        padding: .82rem .58rem .68rem;
+    }
+
+    .za-advantage-icon {
+        width: 3.35rem;
+        height: 3.35rem;
+        margin-bottom: .38rem;
+    }
+
+    .za-advantage-card h3 {
+        min-height: 2.2rem;
+        font-size: .82rem;
+    }
+
+    .za-advantage-card p {
+        font-size: .67rem;
+        line-height: 1.25;
+    }
+
+    .za-audience-inner {
+        padding: .95rem 1rem 1.28rem;
+    }
+
+    .za-audience h2 {
+        margin-bottom: .85rem;
+        font-size: clamp(1.42rem, 6.1vw, 1.62rem);
+    }
+
+    .za-audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .82rem .72rem;
+        width: min(100%, 22.35rem);
+        margin: 0 auto;
+    }
+
+    .za-audience-card {
+        min-height: 0;
+        padding: 0;
+    }
+
+    .za-audience-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .za-winners-inner,
+    .za-faq-inner {
+        padding: .92rem 1rem 1rem;
+    }
+
+    .za-winners h2,
+    .za-faq h2 {
+        gap: .8rem;
+        margin-bottom: .78rem;
+        font-size: clamp(1.42rem, 6.1vw, 1.62rem);
+    }
+
+    .za-winners h2::before,
+    .za-winners h2::after {
+        width: 3.1rem;
+    }
+
+    .za-winner-grid,
+    .za-faq-grid {
+        grid-template-columns: 1fr;
+        width: min(100%, 22.35rem);
+        margin: 0 auto;
+        gap: .72rem;
+    }
+
+    .za-winner-card {
+        min-height: 5.45rem;
+        grid-template-columns: 3.75rem 1fr;
+        gap: .78rem;
+        padding: .6rem .82rem;
+    }
+
+    .za-winner-icon {
+        width: 3.55rem;
+        height: 3.55rem;
+    }
+
+    .za-winner-icon svg {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .za-winner-card h3 {
+        font-size: 1rem;
+    }
+
+    .za-winner-card p {
+        font-size: .76rem;
+    }
+
+    .za-faq-card {
+        min-height: 4.6rem;
+        padding: .7rem .82rem;
+    }
+
+    .za-final-cta {
+        padding: .72rem 1rem .52rem;
+    }
+
+    .za-final-cta-inner {
+        width: min(100%, 22.35rem);
+        min-height: 12.6rem;
+    }
+
+    .za-final-copy {
+        padding: 1.05rem .95rem 1rem;
+    }
+
+    .za-final-copy h2 {
+        font-size: clamp(1.62rem, 8.1vw, 2.1rem);
+    }
+
+    .za-final-copy p {
+        font-size: .9rem;
+        margin-bottom: .62rem;
+    }
+
+    .za-final-button {
+        width: min(100%, 15.8rem);
+        min-height: 2.85rem;
+    }
+
+    .za-final-branch {
+        left: -3.4rem;
+        bottom: -.35rem;
+        width: 13.5rem;
+        opacity: .52;
+    }
+
+    .za-final-bottle {
+        right: -1.2rem;
+        bottom: -.55rem;
+        width: 5.1rem;
+        opacity: .82;
+    }
+
+    .za-footer-inner {
+        grid-template-columns: 1fr 1fr;
+        width: min(100%, 22.35rem);
+        padding: .85rem 1rem 1.1rem;
+        gap: .85rem 1.2rem;
+    }
+
+    .za-footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .za-footer-brand img {
+        width: 11.8rem;
+    }
+
+    .za-footer-brand p {
+        margin-inline: auto;
+    }
+
+    .za-footer-contact {
+        grid-column: 1 / -1;
+        justify-items: center;
+    }
+
+    .za-social-row span {
+        width: 1.85rem;
+        height: 1.85rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .za-header-cta {
+        width: 100%;
+    }
+
+    .za-hero-art {
+        width: min(100%, 22.5rem);
+        min-height: 27rem;
+        margin-top: .85rem;
+    }
+
+    .za-dealer {
+        left: 4.45rem;
+        width: 16.7rem;
+    }
+
+    .za-customer {
+        right: .5rem;
+        width: 8.3rem;
+    }
+
+    .za-bottles {
+        width: 8rem;
+    }
+
+    .za-steps {
+        width: min(100%, 21rem);
+        gap: .95rem .64rem;
+    }
+
+    .za-step-card {
+        min-height: 9.2rem;
+        padding-inline: .5rem;
+    }
+
+    .za-profit-example {
+        width: min(100%, 21rem);
+    }
+
+    .za-advantage-grid {
+        grid-template-columns: 1fr;
+        width: min(100%, 21rem);
+        gap: .68rem;
+    }
+
+    .za-advantage-card {
+        min-height: 7.45rem;
+        display: grid;
+        grid-template-columns: 3.2rem 1fr;
+        column-gap: .76rem;
+        align-items: center;
+        padding: .68rem .85rem;
+        text-align: left;
+    }
+
+    .za-advantage-icon {
+        width: 3.1rem;
+        height: 3.1rem;
+        margin-bottom: 0;
+        grid-row: span 2;
+    }
+
+    .za-advantage-card h3 {
+        display: block;
+        min-height: 0;
+        margin-bottom: .2rem;
+        font-size: .86rem;
+        line-height: 1.12;
+    }
+
+    .za-advantage-card p {
+        font-size: .7rem;
+    }
+
+    .za-audience-grid {
+        width: min(100%, 21rem);
+        gap: .72rem .58rem;
+    }
+
+    .za-audience-card {
+        min-height: 0;
+    }
+
+    .za-winner-grid,
+    .za-faq-grid,
+    .za-final-cta-inner,
+    .za-footer-inner {
+        width: min(100%, 21rem);
+    }
+}
+
+@media (max-width: 560px) {
+    .za-advantage-grid {
+        grid-template-columns: 1fr;
+        width: min(100%, 21rem);
+        gap: .68rem;
+    }
+
+    .za-advantage-card {
+        min-height: 7.45rem;
+        display: grid;
+        grid-template-columns: 3.2rem 1fr;
+        column-gap: .76rem;
+        align-items: center;
+        padding: .68rem .85rem;
+        text-align: left;
+    }
+
+    .za-advantage-icon {
+        width: 3.1rem;
+        height: 3.1rem;
+        margin-bottom: 0;
+        grid-row: span 2;
+    }
+
+    .za-advantage-card h3 {
+        display: block;
+        min-height: 0;
+        margin-bottom: .2rem;
+        font-size: .86rem;
+        line-height: 1.12;
+    }
+
+    .za-advantage-card p {
+        font-size: .7rem;
+    }
+
+    .za-audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: min(100%, 21rem);
+        gap: .72rem .58rem;
+    }
+
+    .za-audience-card {
+        min-height: 0;
+        padding: 0;
+    }
+
+    .za-audience-card img {
+        position: static;
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+}

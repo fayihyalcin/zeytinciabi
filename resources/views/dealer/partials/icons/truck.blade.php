@@ -1,0 +1,1 @@
+<svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path d="M1 7h13v9H1z"></path><path d="M14 10h4l4 3v3h-3"></path><circle cx="5" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
